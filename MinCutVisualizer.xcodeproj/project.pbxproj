@@ -9,25 +9,52 @@
 /* Begin PBXBuildFile section */
 		72CB49B325B95C5200FB1763 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB49B225B95C5200FB1763 /* AppDelegate.swift */; };
 		72CB49B525B95C5200FB1763 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB49B425B95C5200FB1763 /* SceneDelegate.swift */; };
-		72CB49B725B95C5200FB1763 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB49B625B95C5200FB1763 /* ViewController.swift */; };
+		72CB49B725B95C5200FB1763 /* VisualizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB49B625B95C5200FB1763 /* VisualizerViewController.swift */; };
 		72CB49BA25B95C5200FB1763 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72CB49B825B95C5200FB1763 /* Main.storyboard */; };
 		72CB49BC25B95C5300FB1763 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72CB49BB25B95C5300FB1763 /* Assets.xcassets */; };
 		72CB49BF25B95C5300FB1763 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72CB49BD25B95C5300FB1763 /* LaunchScreen.storyboard */; };
+		72CB49C825B9656700FB1763 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB49C725B9656700FB1763 /* Graph.swift */; };
+		72CB49CD25B9679900FB1763 /* MinCutImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB49CC25B9679900FB1763 /* MinCutImplementation.swift */; };
+		72CB49D825B967D800FB1763 /* MinCutVisualizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB49D725B967D800FB1763 /* MinCutVisualizerTests.swift */; };
+		72CB49E225B9691000FB1763 /* VertexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB49E125B9691000FB1763 /* VertexView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		72CB49DA25B967D800FB1763 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 72CB49A725B95C5100FB1763 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72CB49AE25B95C5200FB1763;
+			remoteInfo = MinCutVisualizer;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		72CB49AF25B95C5200FB1763 /* MinCutVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinCutVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72CB49B225B95C5200FB1763 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72CB49B425B95C5200FB1763 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		72CB49B625B95C5200FB1763 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		72CB49B625B95C5200FB1763 /* VisualizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerViewController.swift; sourceTree = "<group>"; };
 		72CB49B925B95C5200FB1763 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		72CB49BB25B95C5300FB1763 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72CB49BE25B95C5300FB1763 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		72CB49C025B95C5300FB1763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72CB49C725B9656700FB1763 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		72CB49CC25B9679900FB1763 /* MinCutImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinCutImplementation.swift; sourceTree = "<group>"; };
+		72CB49D525B967D800FB1763 /* MinCutVisualizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinCutVisualizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		72CB49D725B967D800FB1763 /* MinCutVisualizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinCutVisualizerTests.swift; sourceTree = "<group>"; };
+		72CB49D925B967D800FB1763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72CB49E125B9691000FB1763 /* VertexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VertexView.swift; path = MinCutVisualizer/VertexView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		72CB49AC25B95C5200FB1763 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72CB49D225B967D800FB1763 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				72CB49B125B95C5200FB1763 /* MinCutVisualizer */,
+				72CB49D625B967D800FB1763 /* MinCutVisualizerTests */,
 				72CB49B025B95C5200FB1763 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				72CB49AF25B95C5200FB1763 /* MinCutVisualizer.app */,
+				72CB49D525B967D800FB1763 /* MinCutVisualizerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,13 +87,41 @@
 			children = (
 				72CB49B225B95C5200FB1763 /* AppDelegate.swift */,
 				72CB49B425B95C5200FB1763 /* SceneDelegate.swift */,
-				72CB49B625B95C5200FB1763 /* ViewController.swift */,
+				72CB49CF25B967A100FB1763 /* Model */,
+				72CB49E125B9691000FB1763 /* VertexView.swift */,
+				72CB49B625B95C5200FB1763 /* VisualizerViewController.swift */,
 				72CB49B825B95C5200FB1763 /* Main.storyboard */,
+				72CB49E525B9692600FB1763 /* Supporting Files */,
+			);
+			path = MinCutVisualizer;
+			sourceTree = "<group>";
+		};
+		72CB49CF25B967A100FB1763 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				72CB49C725B9656700FB1763 /* Graph.swift */,
+				72CB49CC25B9679900FB1763 /* MinCutImplementation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		72CB49D625B967D800FB1763 /* MinCutVisualizerTests */ = {
+			isa = PBXGroup;
+			children = (
+				72CB49D725B967D800FB1763 /* MinCutVisualizerTests.swift */,
+				72CB49D925B967D800FB1763 /* Info.plist */,
+			);
+			path = MinCutVisualizerTests;
+			sourceTree = "<group>";
+		};
+		72CB49E525B9692600FB1763 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				72CB49BB25B95C5300FB1763 /* Assets.xcassets */,
 				72CB49BD25B95C5300FB1763 /* LaunchScreen.storyboard */,
 				72CB49C025B95C5300FB1763 /* Info.plist */,
 			);
-			path = MinCutVisualizer;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +144,24 @@
 			productReference = 72CB49AF25B95C5200FB1763 /* MinCutVisualizer.app */;
 			productType = "com.apple.product-type.application";
 		};
+		72CB49D425B967D800FB1763 /* MinCutVisualizerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72CB49DC25B967D800FB1763 /* Build configuration list for PBXNativeTarget "MinCutVisualizerTests" */;
+			buildPhases = (
+				72CB49D125B967D800FB1763 /* Sources */,
+				72CB49D225B967D800FB1763 /* Frameworks */,
+				72CB49D325B967D800FB1763 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				72CB49DB25B967D800FB1763 /* PBXTargetDependency */,
+			);
+			name = MinCutVisualizerTests;
+			productName = MinCutVisualizerTests;
+			productReference = 72CB49D525B967D800FB1763 /* MinCutVisualizerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -98,6 +173,10 @@
 				TargetAttributes = {
 					72CB49AE25B95C5200FB1763 = {
 						CreatedOnToolsVersion = 12.3;
+					};
+					72CB49D425B967D800FB1763 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 72CB49AE25B95C5200FB1763;
 					};
 				};
 			};
@@ -115,6 +194,7 @@
 			projectRoot = "";
 			targets = (
 				72CB49AE25B95C5200FB1763 /* MinCutVisualizer */,
+				72CB49D425B967D800FB1763 /* MinCutVisualizerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +210,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		72CB49D325B967D800FB1763 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -137,13 +224,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72CB49B725B95C5200FB1763 /* ViewController.swift in Sources */,
+				72CB49C825B9656700FB1763 /* Graph.swift in Sources */,
+				72CB49B725B95C5200FB1763 /* VisualizerViewController.swift in Sources */,
+				72CB49E225B9691000FB1763 /* VertexView.swift in Sources */,
 				72CB49B325B95C5200FB1763 /* AppDelegate.swift in Sources */,
 				72CB49B525B95C5200FB1763 /* SceneDelegate.swift in Sources */,
+				72CB49CD25B9679900FB1763 /* MinCutImplementation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72CB49D125B967D800FB1763 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72CB49D825B967D800FB1763 /* MinCutVisualizerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		72CB49DB25B967D800FB1763 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 72CB49AE25B95C5200FB1763 /* MinCutVisualizer */;
+			targetProxy = 72CB49DA25B967D800FB1763 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		72CB49B825B95C5200FB1763 /* Main.storyboard */ = {
@@ -288,7 +394,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 48535654Y7;
-				INFOPLIST_FILE = MinCutVisualizer/Info.plist;
+				INFOPLIST_FILE = "MinCutVisualizer/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +414,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 48535654Y7;
-				INFOPLIST_FILE = MinCutVisualizer/Info.plist;
+				INFOPLIST_FILE = "MinCutVisualizer/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,6 +424,46 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		72CB49DD25B967D800FB1763 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 48535654Y7;
+				INFOPLIST_FILE = MinCutVisualizerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ASM.MinCutVisualizerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MinCutVisualizer.app/MinCutVisualizer";
+			};
+			name = Debug;
+		};
+		72CB49DE25B967D800FB1763 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 48535654Y7;
+				INFOPLIST_FILE = MinCutVisualizerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ASM.MinCutVisualizerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MinCutVisualizer.app/MinCutVisualizer";
 			};
 			name = Release;
 		};
@@ -336,6 +484,15 @@
 			buildConfigurations = (
 				72CB49C425B95C5300FB1763 /* Debug */,
 				72CB49C525B95C5300FB1763 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72CB49DC25B967D800FB1763 /* Build configuration list for PBXNativeTarget "MinCutVisualizerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72CB49DD25B967D800FB1763 /* Debug */,
+				72CB49DE25B967D800FB1763 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
