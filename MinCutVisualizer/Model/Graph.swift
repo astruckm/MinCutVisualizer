@@ -17,3 +17,25 @@ public struct Edge<T: Equatable> {
     let source: Vertex<T>
     let destination: Vertex<T>
 }
+
+
+class Graph<T: Equatable> {
+    let vertices: [Vertex<T>]
+    
+    internal init(vertices: [Vertex<T>]) {
+        self.vertices = vertices
+    }
+
+    convenience init(numVertices: Int, type: T.Type) {
+        //TODO: generate random vertices and edges
+        
+        self.init(vertices: [])
+    }
+    
+    convenience init() {
+        self.init(vertices: [])
+    }
+
+}
+
+

@@ -10,14 +10,14 @@ import UIKit
 class VisualizerViewController: UIViewController {
     @IBOutlet weak var newGraphButton: UIButton!
     
-    
 
     @IBAction func generateNewGraph(_ sender: UIButton) {
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        setupUI()
     }
 
     

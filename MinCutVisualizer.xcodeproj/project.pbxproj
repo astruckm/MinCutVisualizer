@@ -17,6 +17,7 @@
 		72CB49CD25B9679900FB1763 /* MinCutImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB49CC25B9679900FB1763 /* MinCutImplementation.swift */; };
 		72CB49D825B967D800FB1763 /* MinCutVisualizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB49D725B967D800FB1763 /* MinCutVisualizerTests.swift */; };
 		72CB49E225B9691000FB1763 /* VertexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB49E125B9691000FB1763 /* VertexView.swift */; };
+		72CB49EB25B96D5000FB1763 /* ProceduralUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB49EA25B96D5000FB1763 /* ProceduralUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		72CB49D725B967D800FB1763 /* MinCutVisualizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinCutVisualizerTests.swift; sourceTree = "<group>"; };
 		72CB49D925B967D800FB1763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72CB49E125B9691000FB1763 /* VertexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VertexView.swift; path = MinCutVisualizer/VertexView.swift; sourceTree = SOURCE_ROOT; };
+		72CB49EA25B96D5000FB1763 /* ProceduralUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProceduralUI.swift; path = MinCutVisualizer/ProceduralUI.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		72CB49CF25B967A100FB1763 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				72CB49EA25B96D5000FB1763 /* ProceduralUI.swift */,
 				72CB49C725B9656700FB1763 /* Graph.swift */,
 				72CB49CC25B9679900FB1763 /* MinCutImplementation.swift */,
 			);
@@ -230,6 +233,7 @@
 				72CB49B325B95C5200FB1763 /* AppDelegate.swift in Sources */,
 				72CB49B525B95C5200FB1763 /* SceneDelegate.swift in Sources */,
 				72CB49CD25B9679900FB1763 /* MinCutImplementation.swift in Sources */,
+				72CB49EB25B96D5000FB1763 /* ProceduralUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
