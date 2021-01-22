@@ -29,16 +29,8 @@ class VertexView: UIView {
             label.centerXAnchor.constraint(equalTo: centerXAnchor),
             label.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5)
         ])
+        label.textColor = .white
     }
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-    
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)

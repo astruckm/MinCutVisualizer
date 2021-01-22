@@ -17,8 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Og-I8-LZn">
+                                <rect key="frame" x="350" y="44" width="54" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="iya-c3-Vft"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="24"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lFV-u5-dPi"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Qw-1x-6AR" userLabel="Graph Container View" customClass="GraphContainerView" customModule="MinCutVisualizer" customModuleProvider="target">
-                                <rect key="frame" x="10.5" y="32" width="393" height="669"/>
+                                <rect key="frame" x="10.5" y="92" width="393" height="609"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z85-ki-hcs">
@@ -39,18 +50,22 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Og-I8-LZn" secondAttribute="trailing" constant="10" id="2VY-U0-Ai1"/>
                             <constraint firstItem="2Qw-1x-6AR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.95" id="89r-Ks-eVR"/>
                             <constraint firstItem="Z85-ki-hcs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="98Z-rg-qtb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="2Qw-1x-6AR" secondAttribute="top" constant="12" id="DM4-hM-6VG"/>
+                            <constraint firstItem="4Og-I8-LZn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Coh-yj-azs"/>
                             <constraint firstItem="Z85-ki-hcs" firstAttribute="top" secondItem="2Qw-1x-6AR" secondAttribute="bottom" constant="16" id="DZ3-rR-dxG"/>
+                            <constraint firstItem="4Og-I8-LZn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="Hd9-4k-4lx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Z85-ki-hcs" secondAttribute="bottom" constant="53" id="O0O-mu-YNe"/>
                             <constraint firstItem="2Qw-1x-6AR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Sm9-eZ-4j3"/>
                             <constraint firstItem="Z85-ki-hcs" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.63285" id="ZFD-GG-3RL"/>
+                            <constraint firstItem="2Qw-1x-6AR" firstAttribute="top" secondItem="4Og-I8-LZn" secondAttribute="bottom" id="qhm-Mo-HjR"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="graphContainerView" destination="2Qw-1x-6AR" id="qoH-lw-gVH"/>
                         <outlet property="newGraphButton" destination="Z85-ki-hcs" id="Xn7-q1-1Yw"/>
+                        <outlet property="startButton" destination="4Og-I8-LZn" id="bzI-A4-S5a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

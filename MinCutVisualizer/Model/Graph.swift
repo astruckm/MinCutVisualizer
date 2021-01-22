@@ -11,6 +11,7 @@ import Foundation
 public struct Vertex<T: Equatable>: Identifiable {
     public let value: T
     public let id: UUID
+    public let index: Int
 }
 
 public struct Edge<T: Equatable> {
