@@ -18,7 +18,7 @@ class VertexView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        layer.cornerRadius = 10
+        layer.cornerRadius = self.bounds.height / CGFloat(2)
         setupSubviews()
     }
     

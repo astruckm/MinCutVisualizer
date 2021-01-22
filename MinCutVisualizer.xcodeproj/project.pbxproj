@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7267C03225BA81C8000A0144 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7267C03125BA81C8000A0144 /* SampleData.swift */; };
+		726E7F1925BA6B6B0070E938 /* GraphContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726E7F1825BA6B6B0070E938 /* GraphContainerView.swift */; };
 		72CB49B325B95C5200FB1763 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB49B225B95C5200FB1763 /* AppDelegate.swift */; };
 		72CB49B525B95C5200FB1763 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB49B425B95C5200FB1763 /* SceneDelegate.swift */; };
 		72CB49B725B95C5200FB1763 /* VisualizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB49B625B95C5200FB1763 /* VisualizerViewController.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7267C03125BA81C8000A0144 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		726E7F1825BA6B6B0070E938 /* GraphContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphContainerView.swift; sourceTree = "<group>"; };
 		72CB49AF25B95C5200FB1763 /* MinCutVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinCutVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72CB49B225B95C5200FB1763 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72CB49B425B95C5200FB1763 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,7 +48,7 @@
 		72CB49D525B967D800FB1763 /* MinCutVisualizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinCutVisualizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72CB49D725B967D800FB1763 /* MinCutVisualizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinCutVisualizerTests.swift; sourceTree = "<group>"; };
 		72CB49D925B967D800FB1763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		72CB49E125B9691000FB1763 /* VertexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VertexView.swift; path = MinCutVisualizer/VertexView.swift; sourceTree = SOURCE_ROOT; };
+		72CB49E125B9691000FB1763 /* VertexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VertexView.swift; path = "MinCutVisualizer/Custom Views/VertexView.swift"; sourceTree = SOURCE_ROOT; };
 		72CB49EA25B96D5000FB1763 /* ProceduralUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProceduralUI.swift; path = MinCutVisualizer/ProceduralUI.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -66,6 +70,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		726E7F1C25BA6B700070E938 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				72CB49E125B9691000FB1763 /* VertexView.swift */,
+				726E7F1825BA6B6B0070E938 /* GraphContainerView.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
 		72CB49A625B95C5100FB1763 = {
 			isa = PBXGroup;
 			children = (
@@ -90,7 +103,7 @@
 				72CB49B225B95C5200FB1763 /* AppDelegate.swift */,
 				72CB49B425B95C5200FB1763 /* SceneDelegate.swift */,
 				72CB49CF25B967A100FB1763 /* Model */,
-				72CB49E125B9691000FB1763 /* VertexView.swift */,
+				726E7F1C25BA6B700070E938 /* Custom Views */,
 				72CB49B625B95C5200FB1763 /* VisualizerViewController.swift */,
 				72CB49B825B95C5200FB1763 /* Main.storyboard */,
 				72CB49E525B9692600FB1763 /* Supporting Files */,
@@ -102,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				72CB49EA25B96D5000FB1763 /* ProceduralUI.swift */,
+				7267C03125BA81C8000A0144 /* SampleData.swift */,
 				72CB49C725B9656700FB1763 /* Graph.swift */,
 				72CB49CC25B9679900FB1763 /* MinCutImplementation.swift */,
 			);
@@ -230,9 +244,11 @@
 				72CB49C825B9656700FB1763 /* Graph.swift in Sources */,
 				72CB49B725B95C5200FB1763 /* VisualizerViewController.swift in Sources */,
 				72CB49E225B9691000FB1763 /* VertexView.swift in Sources */,
+				726E7F1925BA6B6B0070E938 /* GraphContainerView.swift in Sources */,
 				72CB49B325B95C5200FB1763 /* AppDelegate.swift in Sources */,
 				72CB49B525B95C5200FB1763 /* SceneDelegate.swift in Sources */,
 				72CB49CD25B9679900FB1763 /* MinCutImplementation.swift in Sources */,
+				7267C03225BA81C8000A0144 /* SampleData.swift in Sources */,
 				72CB49EB25B96D5000FB1763 /* ProceduralUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

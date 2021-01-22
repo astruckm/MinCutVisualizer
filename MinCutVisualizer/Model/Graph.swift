@@ -8,32 +8,34 @@
 import Foundation
 
 
-public struct Vertex<T: Equatable> {
-    let value: T
-    let edges: [Edge<T>]
+public struct Vertex<T: Equatable>: Identifiable {
+    public let value: T
+    public let id: UUID
 }
 
 public struct Edge<T: Equatable> {
-    let source: Vertex<T>
-    let destination: Vertex<T>
+    public let source: Vertex<T>
+    public let destination: Vertex<T>
 }
 
 
 class Graph<T: Equatable> {
-    let vertices: [Vertex<T>]
+    var vertices: [Vertex<T>]
+    var edges: [Edge<T>]
     
-    internal init(vertices: [Vertex<T>]) {
+    internal init(vertices: [Vertex<T>], edges: [Edge<T>]) {
         self.vertices = vertices
+        self.edges = edges
     }
 
     convenience init(numVertices: Int, type: T.Type) {
         //TODO: generate random vertices and edges
         
-        self.init(vertices: [])
+        self.init(vertices: [], edges: [])
     }
     
     convenience init() {
-        self.init(vertices: [])
+        self.init(vertices: [], edges: [])
     }
 
 }

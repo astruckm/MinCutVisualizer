@@ -10,6 +10,10 @@ import UIKit
 
 
 
+func generateRandomColors(_ numColors: Int) -> [UIColor] {
+    return []
+}
+
 
 func generateRandomColor() -> UIColor {
     return .blue
