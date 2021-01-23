@@ -27,7 +27,7 @@ class VisualizerViewController: UIViewController {
         graph.vertices = sampleVertices
         graph.edges = sampleEdges
         
-        updateGraphContainer(with: graph)
+        makeNewGraph(graph)
         graphContainerView.setNeedsDisplay()
     }
     
@@ -43,7 +43,7 @@ class VisualizerViewController: UIViewController {
         newGraphButton.layer.cornerRadius = 10
     }
     
-    func updateGraphContainer(with graph: Graph<Int>) {
+    func makeNewGraph(_ graph: Graph<Int>) {
         graphContainerView.subviews.forEach { $0.removeFromSuperview() }
         
         var vertexViewsByID: [Int: VertexView] = [:]

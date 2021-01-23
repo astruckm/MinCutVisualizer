@@ -8,7 +8,7 @@
 import Foundation
 
 
-public struct Vertex<T: Equatable>: Identifiable {
+public struct Vertex<T: Equatable> {
     public let value: T
     public let id: UUID
     public let index: Int
@@ -31,7 +31,7 @@ class Graph<T: Equatable> {
 
     convenience init(numVertices: Int, type: T.Type) {
         //TODO: generate random vertices and edges
-        
+
         self.init(vertices: [], edges: [])
     }
     

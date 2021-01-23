@@ -51,7 +51,8 @@ class GraphContainerView: UIView, DrawsGraph {
     
     func contract(_ vertexView: VertexView) {
         UIView.animate(withDuration: 1) {
-            vertexView.transform = CGAffineTransform(translationX: 50, y: 50)
+            vertexView.transform = vertexView.transform.translatedBy(x: 50, y: 50)
+            vertexView.layoutIfNeeded()
         }
     }
 
