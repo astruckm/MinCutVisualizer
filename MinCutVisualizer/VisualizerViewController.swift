@@ -14,9 +14,11 @@ class VisualizerViewController: UIViewController {
     
     var graph = Graph(numVertices: 8, type: Int.self)
     var graphDelegate: DrawsGraph?
+    var currentVertexIdx = 0
     
     @IBAction func startPressed(_ sender: UIButton) {
         graphDelegate?.contract(edgeAtIndex: 0)
+        currentVertexIdx += 1
     }
     
     @IBAction func generateNewGraph(_ sender: UIButton) {
@@ -26,6 +28,7 @@ class VisualizerViewController: UIViewController {
         
         makeNewGraph(graph)
         graphContainerView.setNeedsDisplay()
+        currentVertexIdx = 0
     }
     
     override func viewDidLoad() {
@@ -42,6 +45,7 @@ class VisualizerViewController: UIViewController {
     
     func makeNewGraph(_ graph: Graph<Int>) {
         graphContainerView.subviews.forEach { $0.removeFromSuperview() }
+        graphContainerView.edgePaths = []
         
         var vertexViewsByID: [Int: VertexView] = [:]
         for vertex in graph.vertices {

@@ -23,7 +23,7 @@ class GraphContainerView: UIView, DrawsGraph {
             let startCenterY = (vertexViewPair.start.frame.maxY - vertexViewPair.start.frame.minY) / 2 + vertexViewPair.start.frame.minY
             let endCenterX = (vertexViewPair.end.frame.maxX - vertexViewPair.end.frame.minX) / 2 + vertexViewPair.end.frame.minX
             let endCenterY = (vertexViewPair.end.frame.maxY - vertexViewPair.end.frame.minY) / 2 + vertexViewPair.end.frame.minY
-
+            
             return (start: CGPoint(x: startCenterX, y: startCenterY), end: CGPoint(x: endCenterX, y: endCenterY))
         }
     }
@@ -46,8 +46,8 @@ class GraphContainerView: UIView, DrawsGraph {
     }
     
     private func applyStroke(_ path: UIBezierPath) {
-        path.lineWidth = 3
-        UIColor.darkGray.setStroke()
+        path.lineWidth = 1.5
+        UIColor.lightGray.setStroke()
         path.stroke()
     }
     
@@ -55,11 +55,46 @@ class GraphContainerView: UIView, DrawsGraph {
         let edge = edgeConnections[edgeIndex]
         let coords = edgePoints[edgeIndex]
         let translation: CGPoint = CGPoint(x: coords.end.x-coords.start.x, y: coords.end.y-coords.start.y)
-        UIView.animate(withDuration: 0.3) {
+        
+        UIView.animate(withDuration: 0.5) {
             edge.start.transform = edge.start.transform.translatedBy(x: translation.x, y: translation.y)
             edge.start.layoutIfNeeded()
+        } completion: { (finished) in
+            if finished {
+                edge.start.isHidden = true
+            }
         }
+        self.edgeConnections.remove(at: edgeIndex)
+        self.setNeedsDisplay()
+        
     }
+    
+    func drawEdges() {
+        for (i, edge) in edgePoints.enumerated() {
+            CATransaction.begin()
+            let layer = CAShapeLayer()
+            layer.strokeColor = UIColor.lightGray.cgColor
+            layer.lineWidth = 1.5
+            let path = UIBezierPath()
+            layer.path = path.cgPath
+            
+            let animation = CABasicAnimation(keyPath: "strokeEnd \(i)")
+            animation.fromValue = edge.start
+            animation.toValue = edge.end
+            animation.duration = 0.5
+            
+            CATransaction.setCompletionBlock{ [weak self] in
+                print("Animation completed")
+            }
+            
+            layer.add(animation, forKey: "stroke \(i)")
 
+            CATransaction.commit()
+            self.layer.addSublayer(layer)
+            edgePaths.append(path)
+        }
+        
+    }
+    
     
 }
