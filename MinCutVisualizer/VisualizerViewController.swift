@@ -14,12 +14,9 @@ class VisualizerViewController: UIViewController {
     
     var graph = Graph(numVertices: 8, type: Int.self)
     var graphDelegate: DrawsGraph?
-
     
     @IBAction func startPressed(_ sender: UIButton) {
-        if let vv = graphContainerView.vertexViews.first?.view {
-            graphDelegate?.contract(vv)
-        }
+        graphDelegate?.contract(edgeAtIndex: 0)
     }
     
     @IBAction func generateNewGraph(_ sender: UIButton) {
@@ -37,7 +34,7 @@ class VisualizerViewController: UIViewController {
         graphDelegate = graphContainerView
         setupUI()
     }
-
+    
     
     private func setupUI() {
         newGraphButton.layer.cornerRadius = 10
@@ -68,6 +65,6 @@ class VisualizerViewController: UIViewController {
             }
         }
     }
-
+    
 }
 

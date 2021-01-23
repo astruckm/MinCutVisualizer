@@ -9,7 +9,7 @@ import UIKit
 
 protocol DrawsGraph {
     var vertexViews: [(view: VertexView, color: UIColor)] { get set }
-    func contract(_ vertexView: VertexView)
+    func contract(edgeAtIndex edgeIndex: Int)
 }
 
 class GraphContainerView: UIView, DrawsGraph {
@@ -27,6 +27,7 @@ class GraphContainerView: UIView, DrawsGraph {
             return (start: CGPoint(x: startCenterX, y: startCenterY), end: CGPoint(x: endCenterX, y: endCenterY))
         }
     }
+    var edgePaths: [UIBezierPath] = []
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -40,6 +41,7 @@ class GraphContainerView: UIView, DrawsGraph {
             
             applyStroke(path)
             currentPath = path
+            edgePaths.append(path)
         }
     }
     
@@ -49,10 +51,13 @@ class GraphContainerView: UIView, DrawsGraph {
         path.stroke()
     }
     
-    func contract(_ vertexView: VertexView) {
-        UIView.animate(withDuration: 1) {
-            vertexView.transform = vertexView.transform.translatedBy(x: 50, y: 50)
-            vertexView.layoutIfNeeded()
+    func contract(edgeAtIndex edgeIndex: Int) {
+        let edge = edgeConnections[edgeIndex]
+        let coords = edgePoints[edgeIndex]
+        let translation: CGPoint = CGPoint(x: coords.end.x-coords.start.x, y: coords.end.y-coords.start.y)
+        UIView.animate(withDuration: 0.3) {
+            edge.start.transform = edge.start.transform.translatedBy(x: translation.x, y: translation.y)
+            edge.start.layoutIfNeeded()
         }
     }
 
