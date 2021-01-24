@@ -13,7 +13,6 @@ protocol DrawsGraph {
 }
 
 class GraphContainerView: UIView, DrawsGraph {
-    private var currentPath: UIBezierPath? = nil
     let vertexSide: CGFloat = 64
     var vertexViews: [(view: VertexView, color: UIColor)] = []
     var edgeConnections: [(start: VertexView, end: VertexView)] = []
@@ -33,14 +32,12 @@ class GraphContainerView: UIView, DrawsGraph {
         super.draw(rect)
         
         for edge in edgePoints {
-            currentPath = nil
             let path = UIBezierPath()
             path.move(to: edge.start)
             path.addLine(to: edge.end)
             path.close()
             
             applyStroke(path)
-            currentPath = path
             edgePaths.append(path)
         }
     }
@@ -66,35 +63,8 @@ class GraphContainerView: UIView, DrawsGraph {
         }
         self.edgeConnections.remove(at: edgeIndex)
         self.setNeedsDisplay()
-        
     }
     
-    func drawEdges() {
-        for (i, edge) in edgePoints.enumerated() {
-            CATransaction.begin()
-            let layer = CAShapeLayer()
-            layer.strokeColor = UIColor.lightGray.cgColor
-            layer.lineWidth = 1.5
-            let path = UIBezierPath()
-            layer.path = path.cgPath
-            
-            let animation = CABasicAnimation(keyPath: "strokeEnd \(i)")
-            animation.fromValue = edge.start
-            animation.toValue = edge.end
-            animation.duration = 0.5
-            
-            CATransaction.setCompletionBlock{ [weak self] in
-                print("Animation completed")
-            }
-            
-            layer.add(animation, forKey: "stroke \(i)")
-
-            CATransaction.commit()
-            self.layer.addSublayer(layer)
-            edgePaths.append(path)
-        }
-        
-    }
     
     
 }

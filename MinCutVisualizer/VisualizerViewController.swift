@@ -12,7 +12,7 @@ class VisualizerViewController: UIViewController {
     @IBOutlet weak var newGraphButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     
-    var graph = Graph(numVertices: 8, type: Int.self)
+    var graph = Graph(verticeValues: Array(1...8), type: Int.self)
     var graphDelegate: DrawsGraph?
     var currentVertexIdx = 0
     
@@ -22,7 +22,7 @@ class VisualizerViewController: UIViewController {
     }
     
     @IBAction func generateNewGraph(_ sender: UIButton) {
-        graph = Graph(numVertices: 8, type: Int.self)
+        graph = Graph(verticeValues: Array(1...8), type: Int.self)
         graph.vertices = sampleVertices
         graph.edges = sampleEdges
         

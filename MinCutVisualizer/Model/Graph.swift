@@ -28,10 +28,15 @@ class Graph<T: Equatable> {
         self.edges = edges
     }
 
-    convenience init(numVertices: Int, type: T.Type) {
+    convenience init(verticeValues: [T], type: T.Type) {
         //TODO: generate random vertices and edges
+        var vertices: [Vertex<T>] = []
+        for (i, value) in verticeValues.enumerated() {
+            let vertex = Vertex(value: value, index: i)
+            vertices.append(vertex)
+        }
 
-        self.init(vertices: [], edges: [])
+        self.init(vertices: vertices, edges: [])
     }
     
     convenience init() {
