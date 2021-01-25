@@ -13,6 +13,12 @@ public struct Vertex<T: Equatable> {
     public let index: Int
 }
 
+extension Vertex: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(index)
+    }
+}
+
 public struct Edge<T: Equatable> {
     public let source: Vertex<T>
     public let destination: Vertex<T>
