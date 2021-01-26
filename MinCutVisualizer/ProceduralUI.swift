@@ -30,10 +30,7 @@ func generateRandomUndirectedEdges<T>(betweenVertices vertices: [Vertex<T>]) -> 
     let numVerticeAppearances = numEdges * 2
     //2. list of all vertex appearances
     //2a. start with 2 of each vertex, to minimize multiple edges and chances of self-loops
-    var allVertexAppearances: [(vertex: Vertex<T>, num: Int)] = []
-    for (i, v) in vertices.enumerated() {
-        allVertexAppearances.append((v, 2))
-    }
+    var allVertexAppearances: [(vertex: Vertex<T>, num: Int)] = vertices.map { ($0, 2) }
     //2b. then 2 * (numEdges - vertices.count) are chosen randomly
     for _ in 0..<(numVerticeAppearances-(vertices.count*2)) {
         let randomIdx = Int.random(in: 0..<vertices.count)
@@ -43,10 +40,10 @@ func generateRandomUndirectedEdges<T>(betweenVertices vertices: [Vertex<T>]) -> 
     // loop till all indices are deleted from allVertexAppearances
     var randomEdges: [Edge<T>] = []
     var numDeletedIndices: Int = 0
-    while allVertexAppearances.count > 1 {
+    while allVertexAppearances.count > 2 {
         // random num in index range of available vertices, then another random num in range except for 1st index.
-        let randomIdx = Int.random(in: 0..<(vertices.count-numDeletedIndices))
-        var secondRandomIdx = Int.random(in: 0..<(vertices.count-numDeletedIndices-1))
+        let randomIdx = Int.random(in: 0..<(allVertexAppearances.count))
+        var secondRandomIdx = Int.random(in: 0..<(allVertexAppearances.count-1))
         secondRandomIdx = secondRandomIdx >= randomIdx ? secondRandomIdx + 1 : secondRandomIdx
         
         // Init new Edge
@@ -62,6 +59,7 @@ func generateRandomUndirectedEdges<T>(betweenVertices vertices: [Vertex<T>]) -> 
             allVertexAppearances.removeLast()
             numDeletedIndices += 1
         }
+        guard allVertexAppearances.count-1 >= secondRandomIdx else { continue }
         if allVertexAppearances[secondRandomIdx].num <= 0 {
             allVertexAppearances.swapAt(secondRandomIdx, allVertexAppearances.count-1)
             allVertexAppearances.removeLast()

@@ -41,8 +41,9 @@ class Graph<T: Equatable> {
             let vertex = Vertex(value: value, index: i)
             vertices.append(vertex)
         }
+        let edges = generateRandomUndirectedEdges(betweenVertices: vertices)
 
-        self.init(vertices: vertices, edges: [])
+        self.init(vertices: vertices, edges: edges)
     }
     
     convenience init() {

@@ -20,8 +20,9 @@ class MinCutVisualizerTests: XCTestCase {
 
     func testGenerateRandomEdges() {
         let randomEdges1 = generateRandomUndirectedEdges(betweenVertices: sampleVertices)
-        print(randomEdges1)
-        
+        for edge in randomEdges1 {
+            print("\(edge.destination.index)-----\(edge.source.index)")
+        }
         
         XCTAssert(randomEdges1.count >= (sampleVertices.count * 5 / 4) && randomEdges1.count <= sampleVertices.count * 2)
     }
