@@ -23,8 +23,6 @@ class VisualizerViewController: UIViewController {
     
     @IBAction func generateNewGraph(_ sender: UIButton) {
         graph = Graph(verticeValues: Array(1...8), type: Int.self)
-        graph.vertices = sampleVertices
-        graph.edges = sampleEdges
         
         makeNewGraph(graph)
         graphContainerView.setNeedsDisplay()
@@ -62,9 +60,14 @@ class VisualizerViewController: UIViewController {
             
             vertexViewsByID[vertex.index] = vertexView
         }
+        for (i, vv) in vertexViewsByID {
+            print("vv by ID: \(i), \(vv.label.text)")
+        }
         graphContainerView.edgeConnections = []
         for edge in graph.edges {
+            print("source: \(edge.source.index), dest: \(edge.destination.index)")
             if let sourceView = vertexViewsByID[edge.source.index], let destView = vertexViewsByID[edge.destination.index] {
+                print("sourceView: \(sourceView.label.text), destView: \(destView.label.text)")
                 graphContainerView.edgeConnections.append((sourceView, destView))
             }
         }
