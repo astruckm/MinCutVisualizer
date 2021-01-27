@@ -19,7 +19,9 @@ class MinCutVisualizerTests: XCTestCase {
     }
     
     func testGenerateRandomColorVertices() {
-        let randomVertices = generateRandomNumVerticesWithColors(10)
+        let numVertices = 10
+        let randomVertices = generateRandomNumVerticesWithColors(numVertices)
+        XCTAssert(randomVertices.count == numVertices)
         
         var verticesSet: Set<Vertex<UIColor>> = []
         for (i, vertex) in randomVertices.enumerated() {

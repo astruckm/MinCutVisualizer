@@ -55,14 +55,16 @@ func generateRandomNumVerticesWithColors(_ numVertices: Int) -> [Vertex<UIColor>
         let hueColors = randomColors(count: numHue, hue: hue)
         colors.append(contentsOf: hueColors)
     }
+    colors.append(randomColor(hue: .monochrome))
     
-    var vertices: [Vertex<UIColor>] = []
-    for (idx, color) in colors.enumerated() {
-         let vertex = Vertex<UIColor>(value: color, index: idx)
-         vertices.append(vertex)
-    }
+//    var vertices: [Vertex<UIColor>] = []
+//    for (idx, color) in colors.enumerated() {
+//         let vertex = Vertex<UIColor>(value: color, index: idx)
+//         vertices.append(vertex)
+//    }
         
-    return vertices
+    return generateVertices(withValues: colors)
+
 }
 
 func generateRandomUndirectedEdges<T>(betweenVertices vertices: [Vertex<T>]) -> [Edge<T>] {
