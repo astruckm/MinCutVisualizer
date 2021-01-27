@@ -17,6 +17,17 @@ class MinCutVisualizerTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testGenerateRandomColorVertices() {
+        let randomVertices = generateRandomNumVerticesWithColors(10)
+        
+        var verticesSet: Set<Vertex<UIColor>> = []
+        for (i, vertex) in randomVertices.enumerated() {
+            XCTAssert(i == vertex.index)
+            verticesSet.insert(vertex)
+        }
+        XCTAssert(randomVertices.count == verticesSet.count)
+    }
 
     func testGenerateRandomEdges() {
         let randomEdges1 = generateRandomUndirectedEdges(betweenVertices: sampleVertices)

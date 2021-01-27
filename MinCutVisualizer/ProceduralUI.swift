@@ -6,10 +6,24 @@
 //
 
 import UIKit
+import RandomColor
 
 
+extension Hue {
+    static var allPreDefinedCase: [Hue] {
+        return [.red, .orange, .yellow, .green, .blue, .purple, .pink, .monochrome]
+    }
+    
+    public static func createHue(withNum num: Int) -> Hue {
+        guard num <= 7 && num >= 0 else {
+            return .blue
+        }
+        return allPreDefinedCase[num]
+    }
+    
+}
 
-func generateUniqueRandomNumberOrder(inRange range: ClosedRange<Int>) -> [Int] {
+fileprivate func generateUniqueRandomNumberOrder(inRange range: ClosedRange<Int>) -> [Int] {
     var rangeArray = Array(range)
     var randomNumbers: [Int] = []
     while rangeArray.count > 0 {
@@ -19,6 +33,36 @@ func generateUniqueRandomNumberOrder(inRange range: ClosedRange<Int>) -> [Int] {
         randomNumbers.append(randomNum)
     }
     return randomNumbers
+}
+
+func generateVertices<T>(withValues values: [T]) -> [Vertex<T>] {
+    var vertices: [Vertex<T>] = []
+    for (i, value) in values.enumerated() {
+        vertices.append(Vertex(value: value, index: i))
+    }
+    
+    return vertices
+}
+
+func generateRandomNumVerticesWithColors(_ numVertices: Int) -> [Vertex<UIColor>] {
+    let numColors = 7
+    let colorNumOrder = generateUniqueRandomNumberOrder(inRange: 0...(numColors-1))
+    var colors: [UIColor] = []
+    for idx in 0..<colorNumOrder.count {
+        let numColoredVertices = numVertices - min(numVertices / numColors, 1)
+        let hue = Hue.createHue(withNum: idx)
+        let numHue = (numVertices / numColors) + (idx < numColoredVertices % numColors ? 1 : 0)
+        let hueColors = randomColors(count: numHue, hue: hue)
+        colors.append(contentsOf: hueColors)
+    }
+    
+    var vertices: [Vertex<UIColor>] = []
+    for (idx, color) in colors.enumerated() {
+         let vertex = Vertex<UIColor>(value: color, index: idx)
+         vertices.append(vertex)
+    }
+        
+    return vertices
 }
 
 func generateRandomUndirectedEdges<T>(betweenVertices vertices: [Vertex<T>]) -> [Edge<T>] {
@@ -67,20 +111,12 @@ func generateRandomUndirectedEdges<T>(betweenVertices vertices: [Vertex<T>]) -> 
         }
         
     }
-    //TODO: add edges for any leftovers in allVertexAppearances
+    // add edges for any leftovers in allVertexAppearances
     if let first = allVertexAppearances.first, let last = allVertexAppearances.last {
         let edge = Edge(source: first.vertex, destination: last.vertex)
         randomEdges.append(edge)
     }
-
+    
     return randomEdges
 }
 
-func generateRandomColors(_ numColors: Int) -> [UIColor] {
-    return []
-}
-
-
-func generateRandomColor() -> UIColor {
-    return .blue
-}

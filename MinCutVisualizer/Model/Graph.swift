@@ -19,6 +19,7 @@ extension Vertex: Hashable {
     }
 }
 
+
 public struct Edge<T: Equatable> {
     public let source: Vertex<T>
     public let destination: Vertex<T>
