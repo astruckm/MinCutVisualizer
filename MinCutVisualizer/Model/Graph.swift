@@ -5,7 +5,7 @@
 //  Created by Andrew Struck-Marcell on 1/21/21.
 //
 
-import Foundation
+import UIKit
 
 
 public struct Vertex<T: Equatable> {
@@ -18,6 +18,7 @@ extension Vertex: Hashable {
         hasher.combine(index)
     }
 }
+
 
 
 public struct Edge<T: Equatable> {
@@ -36,7 +37,6 @@ class Graph<T: Equatable> {
     }
 
     convenience init(verticeValues: [T], type: T.Type) {
-        //TODO: generate random vertices and edges
         var vertices: [Vertex<T>] = []
         for (i, value) in verticeValues.enumerated() {
             let vertex = Vertex(value: value, index: i)
@@ -50,7 +50,13 @@ class Graph<T: Equatable> {
     convenience init() {
         self.init(vertices: [], edges: [])
     }
+    
 
 }
 
+//func setupColoredGraph<UIColor>(numVertices: Int) -> Graph<UIColor> {
+//    let vertices = generateRandomNumVerticesWithColors(numVertices)
+//    let edges = generateRandomUndirectedEdges(betweenVertices: vertices)
+//    return Graph(vertices: vertices, edges: edges)
+//}
 

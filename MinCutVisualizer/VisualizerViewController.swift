@@ -12,17 +12,22 @@ class VisualizerViewController: UIViewController {
     @IBOutlet weak var newGraphButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     
-    var graph = Graph(verticeValues: Array(1...8), type: Int.self)
+    var graph: Graph<UIColor> = Graph()
     var graphDelegate: DrawsGraph?
     var currentVertexIdx = 0
+    let possibleNumOfVertices = 4...6
     
     @IBAction func startPressed(_ sender: UIButton) {
+        guard currentVertexIdx > graph.vertices.count else { return }
         graphDelegate?.contract(edgeAtIndex: 0)
         currentVertexIdx += 1
     }
     
     @IBAction func generateNewGraph(_ sender: UIButton) {
-        graph = Graph(verticeValues: Array(1...8), type: Int.self)
+        graph = Graph()
+        let numVertices = Int.random(in: possibleNumOfVertices)
+        graph.vertices = generateRandomNumVerticesWithColors(numVertices)
+        graph.edges = generateRandomUndirectedEdges(betweenVertices: graph.vertices)
         
         makeNewGraph(graph)
         graphContainerView.setNeedsDisplay()
@@ -41,7 +46,7 @@ class VisualizerViewController: UIViewController {
         newGraphButton.layer.cornerRadius = 10
     }
     
-    func makeNewGraph(_ graph: Graph<Int>) {
+    func makeNewGraph(_ graph: Graph<UIColor>) {
         graphContainerView.subviews.forEach { $0.removeFromSuperview() }
         graphContainerView.edgePaths = []
         
@@ -49,13 +54,12 @@ class VisualizerViewController: UIViewController {
         for vertex in graph.vertices {
             let xRandom = CGFloat(Int.random(in: 8...Int(graphContainerView.bounds.width-8)))
             let yRandom = CGFloat(Int.random(in: 8...Int(graphContainerView.bounds.height-8)))
-            let randomColor: UIColor = systemColors[Int.random(in: 0..<systemColors.count)]
             
             let vertexView = VertexView(frame: CGRect(x: xRandom, y: yRandom, width: graphContainerView.vertexSide, height: graphContainerView.vertexSide))
             graphContainerView.addSubview(vertexView)
-            vertexView.label.text = String(vertex.value)
-            vertexView.backgroundColor = randomColor
-            graphContainerView.vertexViews.append((view: vertexView, color: randomColor))
+            vertexView.label.text = String(vertex.index)
+            vertexView.backgroundColor = vertex.value
+            graphContainerView.vertexViews.append((view: vertexView, color: vertex.value))
             graphContainerView.bringSubviewToFront(vertexView)
             
             vertexViewsByID[vertex.index] = vertexView
