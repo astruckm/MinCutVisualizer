@@ -18,7 +18,7 @@ class VisualizerViewController: UIViewController {
     let possibleNumOfVertices = 4...6
     
     @IBAction func startPressed(_ sender: UIButton) {
-        guard currentVertexIdx > graph.vertices.count else { return }
+        guard (currentVertexIdx) < graph.vertices.count else { return }
         graphDelegate?.contract(edgeAtIndex: 0)
         currentVertexIdx += 1
     }
@@ -26,8 +26,8 @@ class VisualizerViewController: UIViewController {
     @IBAction func generateNewGraph(_ sender: UIButton) {
         graph = Graph()
         let numVertices = Int.random(in: possibleNumOfVertices)
-        graph.vertices = generateRandomNumVerticesWithColors(numVertices)
-        graph.edges = generateRandomUndirectedEdges(betweenVertices: graph.vertices)
+        graph.vertices = self.generateRandomNumVerticesWithColors(numVertices)
+        graph.edges = self.generateRandomUndirectedEdges(betweenVertices: graph.vertices)
         
         makeNewGraph(graph)
         graphContainerView.setNeedsDisplay()
@@ -74,4 +74,6 @@ class VisualizerViewController: UIViewController {
     }
     
 }
+
+extension VisualizerViewController: RandomGraphElements { }
 

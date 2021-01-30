@@ -9,18 +9,20 @@ import XCTest
 @testable import MinCutVisualizer
 
 class MinCutVisualizerTests: XCTestCase {
+    struct RandomGraphGeneration: RandomGraphElements { }
+    var graphGeneration: RandomGraphGeneration!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        graphGeneration = RandomGraphGeneration()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        graphGeneration = nil
     }
     
     func testGenerateRandomColorVertices() {
         let numVertices = 10
-        let randomVertices = generateRandomNumVerticesWithColors(numVertices)
+        let randomVertices = graphGeneration.generateRandomNumVerticesWithColors(numVertices)
         XCTAssert(randomVertices.count == numVertices)
         
         var verticesSet: Set<Vertex<UIColor>> = []
@@ -32,7 +34,7 @@ class MinCutVisualizerTests: XCTestCase {
     }
 
     func testGenerateRandomEdges() {
-        let randomEdges1 = generateRandomUndirectedEdges(betweenVertices: sampleVertices)
+        let randomEdges1 = graphGeneration.generateRandomUndirectedEdges(betweenVertices: sampleVertices)
         for edge in randomEdges1 {
             print("\(edge.destination.index)-----\(edge.source.index)")
         }

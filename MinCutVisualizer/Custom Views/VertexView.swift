@@ -8,7 +8,7 @@
 import UIKit
 
 class VertexView: UIView {
-
+    // This is mostly for testing purposes
     let label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
